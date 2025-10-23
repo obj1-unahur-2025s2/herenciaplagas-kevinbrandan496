@@ -58,6 +58,7 @@ Para que **cualquier plaga** transmita enfermedades, su población debe ser de a
 - Plaga de **mosquitos**:  
 	El _nivel de daño_ que producen las plagas de este tipo equivale a la población.  
 	Para _transmitir enfermedades_, la población debe ser un número múltiplo de 3 (además de la condición común para todas las plagas); la cuenta es `poblacion % 3 == 0`.
+    method transmiteEnfermedades() = poblacion>=10 
 	
 <br>
 
