@@ -17,19 +17,17 @@ const firulais = new Mascota (salud=300)
 const pichichus = new Mascota (salud=100)
   
   
-  test "un hogar por con 10 de mugre es atacado por cucas 1 entonces mugre pasa a 17.5" {
-    hogar1.recibirAtaque(cucas1)
+  test "cuca1 ataca a hogar 1 entonces hogar queda con mugre 17.5 y cuca1 queda en 16.5" {
+    cucas1.atacarA(hogar1)
     assert.equals(17.5, hogar1.mugre())
+    assert.equals(16.5, cucas1.poblacion())
   }
 
-  test "huerta 1 recibe un ataque de Mosquitos entonces su pruduccion baja a 95" {
-    huerta1.recibirAtaque(mosqu1)
-    assert.equals(95, huerta1.produccion())
+  test "garra 1 ataca a pichichus 2  veces garra  queda con 14.4 y pichichus queda con "{
+   garra1.atacarA(pichichus)
+   garra1.atacarA(pichichus)
+   assert.equals(56, pichichus.salud())
+   assert.equals(14.4, garra1.poblacion())
   }
-
- test "huerta 1 no es buena porque el nivel minimo se seteo en 200 y la produccion es 100" {
- nivelMinimoDeProduccion.valor(200)
-assert.notThat(huerta1.esBueno())
- }
-}
-
+  
+  }

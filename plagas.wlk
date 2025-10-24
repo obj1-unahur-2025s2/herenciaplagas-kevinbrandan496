@@ -1,12 +1,21 @@
 
 class Plaga {
     var poblacion
+    method poblacion() = poblacion
     method transmiteEnfermedades() = poblacion>=10
+    method atacarA(unElemento) {
+        unElemento.recibirAtaque(self)
+      self.efectosDeAtacar()
+    }
+    method efectosDeAtacar() {
+            poblacion*=1.1
+
+    }
 }
 class Cucarachas inherits Plaga {  ///hace llamado a la clasePadre
  
        
-    const pesoPromedioBicho 
+    var pesoPromedioBicho 
 
     method nivelDeDanio() { return poblacion *0.5
       
@@ -16,6 +25,10 @@ class Cucarachas inherits Plaga {  ///hace llamado a la clasePadre
      return super() && pesoPromedioBicho>=10 ///superpone lo que hereda y le agrega la otra condicion
  
     } 
+    override method efectosDeAtacar() {
+      super()
+      pesoPromedioBicho+=2
+    }
 }
 
 class Pulgas inherits Plaga {
@@ -24,7 +37,8 @@ class Pulgas inherits Plaga {
 }
 
 class Garrapatas inherits Pulgas { /// no comntiene nada ya que es similar a pulgas
-
+ override method efectosDeAtacar() { poblacion*=1.2
+ }
 }
 
 

@@ -34,6 +34,8 @@ object nivelMinimoDeProduccion {
 class Mascota {
     var salud
 
+    method salud() = salud 
+
     method esBueno() = salud >250 
 
     method recibirAtaque(unaPlaga) {
